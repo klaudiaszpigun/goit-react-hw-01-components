@@ -1,18 +1,18 @@
-export const Profile = ({
-  imgUrl,
-  name,
-  tag,
-  location,
-  followers,
-  views,
-  likes,
-}) => {
+export const Profile = ({ user }) => {
+  const {
+    username,
+    tag,
+    location,
+    avatar = 'https://cdn-icons-png.flaticon.com/512/1077/1077012.png',
+    stats,
+  } = user;
+
   return (
     <>
       <div>
         <div>
-          <img src={imgUrl} alt="User avatar" />
-          <p>{name}</p>
+          <img src={avatar} alt="User avatar" />
+          <p>{username}</p>
           <p>@{tag}</p>
           <p>{location}</p>
         </div>
@@ -20,15 +20,15 @@ export const Profile = ({
       <ul>
         <li>
           <span>Followers</span>
-          <span>{followers}</span>
+          <span>{stats.followers}</span>
         </li>
         <li>
           <span>Views</span>
-          <span>{views}</span>
+          <span>{stats.views}</span>
         </li>
         <li>
           <span>Likes</span>
-          <span>{likes}</span>
+          <span>{stats.likes}</span>
         </li>
       </ul>
     </>

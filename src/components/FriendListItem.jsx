@@ -1,31 +1,20 @@
-export const FriendListItem = ({ first, second, third, fourth, fifth }) => {
+export const FriendListItem = ({ friend }) => {
+  const {
+    avatar = 'https://cdn-icons-png.flaticon.com/512/1077/1077012.png',
+    name,
+    isOnline,
+  } = friend;
+
+  let onlineColor;
+  if (isOnline) {
+    onlineColor = '#46b14a';
+  }
+
   return (
-    <>
-      <li>
-        <span class={first.isOnline ? "online" : "offline"}>.</span>
-        <img src={first.avatar} alt="User avatar" width="48" />
-        <p>{first.name}</p>
-      </li>
-      <li>
-        <span class={second.isOnline ? "online" : "offline"}>.</span>
-        <img src={second.avatar} alt="User avatar" width="48" />
-        <p>{second.name}</p>
-      </li>
-      <li>
-        <span class={third.isOnline ? "online" : "offline"}>.</span>
-        <img src={third.avatar} alt="User avatar" width="48" />
-        <p>{third.name}</p>
-      </li>
-      <li>
-        <span class={fourth.isOnline ? "online" : "offline"}>.</span>
-        <img src={fourth.avatar} alt="User avatar" width="48" />
-        <p>{fourth.name}</p>
-      </li>
-      <li>
-        <span class={fifth.isOnline ? "online" : "offline"}>.</span>
-        <img src={fifth.avatar} alt="User avatar" width="48" />
-        <p>{fifth.name}</p>
-      </li>
-    </>
+    <li>
+      <span style={{ backgroundColor: onlineColor }}>{isOnline}</span>
+      <img src={avatar} alt="User avatar" width="48" />
+      <p>{name}</p>
+    </li>
   );
 };

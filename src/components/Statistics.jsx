@@ -1,25 +1,18 @@
-export const Statistics = ({ docx, pdf, mp3, psd }) => {
+export const Statistics = ({ data }) => {
+  const { title, stats } = data;
   return (
     <section>
-      <h2>Upload stats</h2>
-      <ul>
-        <li>
-          <span>{docx.label} </span>
-          <span>{docx.percentage}%</span>
-        </li>
-        <li>
-          <span>{pdf.label} </span>
-          <span>{pdf.percentage}%</span>
-        </li>
-        <li>
-          <span>{mp3.label} </span>
-          <span>{mp3.percentage}%</span>
-        </li>
+      {title && <h2>{title}</h2>}
 
-        <li>
-          <span>{psd.label} </span>
-          <span>{psd.percentage}%</span>
-        </li>
+      <ul>
+        {stats.map(state => {
+          return (
+            <li>
+              <span>{state.label}</span>
+              <span>{state.percentage}%</span>
+            </li>
+          );
+        })}
       </ul>
     </section>
   );
