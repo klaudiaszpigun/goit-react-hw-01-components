@@ -1,15 +1,13 @@
-export const Statistics = ({ data }) => {
-  const { title, stats } = data;
+export const Statistics = ({ dates }) => {
   return (
     <section>
-      {title && <h2>{title}</h2>}
-
+      <h2>Upload stats</h2>
       <ul>
-        {stats.map(state => {
+        {dates.map(data => {
           return (
             <li>
-              <span>{state.label}</span>
-              <span>{state.percentage}%</span>
+              <span>{data.label}</span>
+              <span>{data.percentage}</span>
             </li>
           );
         })}

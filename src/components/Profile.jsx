@@ -1,11 +1,5 @@
 export const Profile = ({ user }) => {
-  const {
-    username,
-    tag,
-    location,
-    avatar = 'https://cdn-icons-png.flaticon.com/512/1077/1077012.png',
-    stats,
-  } = user;
+  const { username, tag, location, avatar, stats } = user;
 
   return (
     <>
