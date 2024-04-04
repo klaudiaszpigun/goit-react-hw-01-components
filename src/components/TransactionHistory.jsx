@@ -1,26 +1,22 @@
-import '../css/statistics.css';
+import '../css/transaction.css';
 
 export const TransactionHistory = ({ items }) => {
   return (
     <table>
-      <thead>
-        <tr>
-          <th>Type</th>
-          <th>Amount</th>
-          <th>Currency</th>
-        </tr>
-      </thead>
-      <tbody>
-        {items.map(item => {
-          return (
-            <tr>
-              <td>{item.type}</td>
-              <td>{item.amount}</td>
-              <td>{item.currency}</td>
-            </tr>
-          );
-        })}
-      </tbody>
+      <tr>
+        <th>Type</th>
+        <th>Amount</th>
+        <th>Currency</th>
+      </tr>
+      {items.map(item => {
+        return (
+          <tr>
+            <td>{item.type}</td>
+            <td>{item.amount}</td>
+            <td>{item.currency}</td>
+          </tr>
+        );
+      })}
     </table>
   );
 };
