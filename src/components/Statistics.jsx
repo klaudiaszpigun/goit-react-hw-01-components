@@ -6,8 +6,8 @@ export const Statistics = ({ dates }) => {
         {dates.map(data => {
           return (
             <li>
-              <span>{data.label}</span>
-              <span>{data.percentage}</span>
+              <span>{data.label} </span>
+              <span>{data.percentage}%</span>
             </li>
           );
         })}
