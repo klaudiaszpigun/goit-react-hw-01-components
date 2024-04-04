@@ -17,10 +17,29 @@ code {
 
 .online {
   color: green;
-  font-size: 72px;
+  font-size: 15px;
 }
 
 .offline {
   color: red;
-  font-size: 72px;
+  font-size: 15px;
+}
+
+.list-item {
+  list-style: none;
+}
+
+.friend-container {
+  display: flex;
+  flex-direction: row;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 10px 5px;
+  border-radius: 5px;
+  gap: 10px;
+  align-items: center;
+}
+.friends {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
 }

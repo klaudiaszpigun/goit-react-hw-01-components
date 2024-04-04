@@ -1,3 +1,5 @@
+import '../css/statistics.css';
+
 export const TransactionHistory = ({ items }) => {
   return (
     <table>

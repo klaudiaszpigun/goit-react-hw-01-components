@@ -1,30 +1,30 @@
+import clsx from 'clsx';
+import '../css/profile.css';
 export const Profile = ({ user }) => {
   const { username, tag, location, avatar, stats } = user;
 
   return (
-    <>
-      <div>
-        <div>
-          <img src={avatar} alt="User avatar" />
-          <p>{username}</p>
-          <p>@{tag}</p>
-          <p>{location}</p>
-        </div>
+    <div className={clsx('profile-container')}>
+      <div className={clsx('avatar-container')}>
+        <img src={avatar} alt="User avatar" width="150px" height="150px" />
+        <p>{username}</p>
+        <p>@{tag}</p>
+        <p>{location}</p>
       </div>
-      <ul>
-        <li>
-          <span>Followers</span>
+      <ul className={clsx('list')}>
+        <li className={clsx('list-item')}>
+          <span>Followers: </span>
           <span>{stats.followers}</span>
         </li>
-        <li>
-          <span>Views</span>
+        <li className={clsx('list-item')}>
+          <span>Views: </span>
           <span>{stats.views}</span>
         </li>
-        <li>
-          <span>Likes</span>
+        <li className={clsx('list-item')}>
+          <span>Likes: </span>
           <span>{stats.likes}</span>
         </li>
       </ul>
-    </>
+    </div>
   );
 };
